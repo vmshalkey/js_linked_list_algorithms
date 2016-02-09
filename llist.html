@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+
+	var Node = function(val) {
+		this.val = val;
+		this.next = null;
+	}
+
+	var LinkedList = function() {
+		this.head = null;
+		this.add = function(val) {
+			if(!this.head) {
+				this.head = new Node(val);
+			} else {
+				var current = this.head;
+				while(current.next) {
+					current = current.next;
+				}
+				current.next = new Node(val);
+			}
+		}
+	}
+
+	function counter(node1, count){
+		if(count == undefined) {
+			var count = 1;
+			var current = node1;
+		}
+		if(node1.next == null) {
+			return count;
+		}
+
+		if(node1.next != null) {
+			count++;
+			current = node1.next;
+			return counter(current, count);
+
+		}
+	}
+
+	// console.log("results from counter function " + counter(this.head, undefined));
+
+	</script>
+</head>
+<body>
+
+</body>
+</html>
